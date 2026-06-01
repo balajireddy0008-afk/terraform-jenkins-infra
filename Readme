@@ -1,0 +1,181 @@
+# AWS CI/CD Pipeline with Terraform, Jenkins, Docker, and GitHub
+
+## Project Overview
+
+This project demonstrates an end-to-end DevOps CI/CD pipeline built on AWS using Terraform, Jenkins, Docker, and GitHub.
+
+The infrastructure is provisioned using Terraform, Jenkins is automatically installed on an EC2 instance, and application deployments are automated using Jenkins Pipelines and Docker.
+
+---
+
+## Architecture
+
+Terraform
+→ AWS VPC
+→ Public Subnet
+→ Internet Gateway
+→ Route Table
+→ Security Group
+→ EC2 (Amazon Linux 2023)
+→ Docker
+→ Jenkins
+→ GitHub Repository
+→ Jenkinsfile
+→ Docker Image Build
+→ Container Deployment
+
+---
+
+## Technologies Used
+
+* AWS EC2
+* AWS VPC
+* Terraform
+* Jenkins
+* Docker
+* GitHub
+* Linux (Amazon Linux 2023)
+* Git
+* Node.js
+
+---
+
+## Infrastructure Provisioned
+
+Using Terraform, the following resources were created:
+
+* VPC
+* Public Subnet
+* Internet Gateway
+* Route Table
+* Route Table Association
+* Security Group
+* EC2 Instance
+* SSH Key Pair
+
+---
+
+## Jenkins Configuration
+
+* Installed Jenkins using EC2 User Data
+* Configured Java 21
+* Installed Docker
+* Added Jenkins user to Docker group
+* Configured Jenkins Pipeline
+
+---
+
+## CI/CD Workflow
+
+1. Developer pushes code to GitHub
+2. Jenkins pulls source code
+3. Jenkins reads Jenkinsfile
+4. Docker image is built automatically
+5. Existing container is removed
+6. New container is deployed
+7. Application becomes available on EC2
+
+---
+
+## Project Structure
+
+terraform-jenkins-infra/
+
+├── provider.tf
+
+├── main.tf
+
+├── variables.tf
+
+├── output.tf
+
+├── userdata.sh
+
+├── .gitignore
+
+└── README.md
+
+Application Repository
+
+├── app.js
+
+├── package.json
+
+├── Dockerfile
+
+└── Jenkinsfile
+
+---
+
+## Deployment Steps
+
+### Initialize Terraform
+
+terraform init
+
+### Validate Configuration
+
+terraform validate
+
+### Review Changes
+
+terraform plan
+
+### Create Infrastructure
+
+terraform apply
+
+---
+
+## Access Jenkins
+
+http://<EC2-PUBLIC-IP>:8080
+
+Retrieve Jenkins password:
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+---
+
+## Jenkins Pipeline
+
+The Jenkins pipeline performs:
+
+* Source Code Checkout
+* Docker Build
+* Container Deployment
+
+---
+
+## Learning Outcomes
+
+Through this project, I gained hands-on experience in:
+
+* Infrastructure as Code (Terraform)
+* AWS Networking
+* Jenkins Administration
+* CI/CD Pipeline Creation
+* Docker Containerization
+* GitHub Integration
+* Linux System Administration
+* Cloud Automation
+
+---
+
+## Future Enhancements
+
+* GitHub Webhooks
+* DockerHub Integration
+* Kubernetes Deployment
+* AWS EKS
+* Monitoring with Prometheus & Grafana
+* Terraform Remote State (S3 + DynamoDB)
+* Multi-Environment Deployments
+
+---
+
+## Author
+
+Balaji K
+
+GitHub: https://github.com/balajireddy0008-afk
